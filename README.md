@@ -1,6 +1,9 @@
 # ScaledQL-Gym
 Scaled Q-Learning for gym environment
 
+## Version
+* python: 3.8.12
+
 ## Trainig
 ```
 pip install -r requirements.txt
