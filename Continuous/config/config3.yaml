@@ -1,0 +1,35 @@
+# offline test
+env:
+  env_id: "CarRacing-v2"
+  n_channels: 4
+  img_size: 96
+  n_episode: 3000
+  start_steps: 1000
+
+algo:
+  gamma: 0.99
+  tau: 0.005
+  auto_alpha: False
+  alpha: 0.2
+  batch_size: 32
+  hidden_size: 256
+  lr_actor: 1.e-4
+  lr_critic: 1.e-4
+  hidden_size: 256
+  memory_sizae: 20000
+  cql_weight: 1.0
+  with_lagrange: 0
+  target_action_gap: 10
+  temparature: 1.0
+  n_norm_groups: 4
+  epochs: 2000
+
+util:
+  load_model_id: 15
+  chkpt_dir: "models/offline" 
+  log_dir: "log"
+  experiment_name: "offline_test"
+  save_memory: False
+  memory_dir: "memory_3"
+  eval_interval: 5 
+  log_file: "log/online_20240430210917.csv"

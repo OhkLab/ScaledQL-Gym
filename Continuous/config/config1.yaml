@@ -1,0 +1,29 @@
+# online
+env:
+  env_id: "CarRacing-v2"
+  n_channels: 4
+  img_size: 96
+  start_steps: 1000
+  n_episode: 3000
+
+algo:
+  gamma: 0.99
+  tau: 0.005
+  auto_alpha: False
+  alpha: 0.2
+  batch_size: 128
+  hidden_size: 256
+  lr_actor: 1.e-4
+  lr_critic: 1.e-4
+  memory_size: 20000
+
+util:
+  chkpt_dir: "models/online"
+  save_interval: 5
+  log_dir: "log"
+  experiment_name: "online"
+  load_checkpoint: False
+  save_memory: False
+  memory_dir: "memory"
+
+
