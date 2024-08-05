@@ -10,6 +10,7 @@ import datetime
 from omegaconf import DictConfig
 import hydra
 
+
 @hydra.main(config_name="config3", version_base=None, config_path="config")
 def main(cfg: DictConfig):
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
@@ -149,7 +150,7 @@ def main(cfg: DictConfig):
                         n_save_data,
                     ]
                 )
-    
+
 
 if __name__ == "__main__":
     main()

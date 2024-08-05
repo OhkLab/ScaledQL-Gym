@@ -7,9 +7,9 @@ import agents as Agents
 from omegaconf import DictConfig
 import hydra
 
+
 @hydra.main(config_name="config2", version_base=None, config_path="config")
 def main(cfg: DictConfig):
-    
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICE"] = cfg.util.gpu
 
@@ -17,7 +17,9 @@ def main(cfg: DictConfig):
     env = make_env(cfg.util.env_name)
 
     print("create dataset")
-    train_dataset = OfflineDataset(data_dir=cfg.util.data_dir, log_file=cfg.util.log_file)
+    train_dataset = OfflineDataset(
+        data_dir=cfg.util.data_dir, log_file=cfg.util.log_file
+    )
     print("number of data: ", len(train_dataset))
     train_dataloader = DataLoader(
         dataset=train_dataset,
@@ -56,7 +58,6 @@ def main(cfg: DictConfig):
         train_loss = agent.learn()
         print(f"Epoch: {i+1} | " f"train_loss: {train_loss:.4f} |")
 
-    
+
 if __name__ == "__main__":
     main()
-

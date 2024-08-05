@@ -4,7 +4,6 @@ import torch.nn.functional as F
 from deep_q_network import DeepQNetwork
 from replay_memory import ReplayBuffer
 from scaled_q_network import ScaledQNetwork, CategoricalScaledQNetwork
-import matplotlib.pyplot as plt
 import time
 
 
